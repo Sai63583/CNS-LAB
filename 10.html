@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width= <device-width> , initial_scale=1.0"> 
+        <title>Document</title>
+    </head> 
+    <body> 
+        <h1>Diffie-Hellman Key Exchange Algorithm</h1> 
+ <h4>Experiment-9:</h4> 
+ <h4>Implement the Diffie-Hellman Key Exchange Algorithm using HTML and JavaScript. Consider the end user as one of the parties (Alice) and the JavaScript application as other party (bob). 
+ </h4> 
+ <p>First Prime Number : <input type="text" id="P"/> </p> 
+ <p>Second Prime Number : <input type="text" id="G"/> </p> 
+ <input type="button" id = "Prime" value="Click" onclick = "getvalues()" /> 
+ <script> 
+ function getvalues(){ 
+ function power(m, n, o) { 
+ if (n == 1) 
+ return m; 
+ else 
+ return (Math.pow(m, n) % o); 
+ } 
+ var P, G, Aice_private, Bob_private, Alice_x, Bob_y, Ka, Kb 
+ var x = document.getElementById("P"); 
+ var y = document.getElementById("G"); 
+ P = x.value; 
+ G = y.value; 
+ document.write("<h1>"+ "Diffie-Hellman Key Exchange Algorithm"+"</h1>"+"<br>"); 
+ document.write("<h4>"+"Implement the Diffie-Hellman Key Exchange Algorithm using HTML and JavaScript. Consider the end user as one of the parties (Alice) and the JavaScript application as other party (bob)."+"</h4>"+"<br>"); 
+ document.write("The value of first prime number P:=" + P + "<br>"); 
+ document.write("The value of Second prime number G:=" + G + "<br>"); 
+ Aice_private = 4; 
+ Bob_private = 3; 
+ Alice_x = power(G, Aice_private, P); 
+ Bob_y = power(G, Bob_private, P); 
+ Ka = power(Bob_y, Aice_private, P); 
+ Kb = power(Alice_x, Bob_private, P); 
+ document.write("The value of Alice Screte key Ka:=" + Ka + "<br>"); 
+ document.write("The value of Bob Screte key Kb:=" + Kb + "<br>"); 
+ } 
+ </script> 
+</body> 
+</html> 
